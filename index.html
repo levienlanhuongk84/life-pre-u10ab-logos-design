@@ -957,7 +957,7 @@
     const toggle = () => set(!railEl.classList.contains('collapsed'));
     brand.addEventListener('click', toggle);
     brand.addEventListener('keydown', (e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); toggle(); } });
-    if (navEl) navEl.addEventListener('click', (e) => { if (e.target.closest('.rail-btn')) set(true); });
+    if (navEl) navEl.addEventListener('click', (e) => { if (e.target.closest('.rail-btn') || e.target.closest('.sub-outline a')) set(true); });
     document.addEventListener('click', (e) => { if (!railEl.classList.contains('collapsed') && !railEl.contains(e.target)) set(true); });
     const saved = store.get(KEY + ':railcollapsed');
     apply(saved === null ? true : saved === '1');
