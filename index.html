@@ -509,10 +509,13 @@
   .aims ul { padding-left: 1.2em; } .aims li { margin-block: .35em; font-size: .96em; }
   /* time chip shown right under a Sheet-1 section heading */
   .time-chip { font-family: var(--font-mono); font-weight: 700; }
-  /* brand-logo reveal — large, centered card shown below the item once answered */
+  /* brand-logo reveal — large, centered card shown below the item once answered.
+     Fixed box (not fit-content) so every logo occupies the same footprint on the
+     page regardless of its own aspect ratio — object-fit:contain letterboxes each
+     image to fill that box without cropping or distorting it. */
   .logo-chip[hidden] { display: none !important; }
-  .logo-chip { display: flex; flex-direction: column; align-items: center; gap: 6px; width: fit-content; max-width: 100%; margin: 12px auto 0; background: #fff; border: 1px solid var(--line-strong); border-radius: 14px; padding: 14px 22px; box-shadow: var(--shadow); }
-  .brand-logo { display: block; height: 72px; width: auto; max-width: 220px; object-fit: contain; }
+  .logo-chip { display: flex; flex-direction: column; align-items: center; gap: 8px; width: 176px; max-width: 100%; margin: 12px auto 0; background: #fff; border: 1px solid var(--line-strong); border-radius: 14px; padding: 14px 16px; box-shadow: var(--shadow); }
+  .brand-logo { display: block; width: 100%; height: 92px; object-fit: contain; }
   .logo-name { font-family: var(--font-cond); font-weight: 700; letter-spacing: .05em; text-transform: uppercase; color: var(--purple-ink); font-size: .82em; }
   /* plain, ungraded suggestion dropdown (Nói theo cặp SB ex 4) */
   select.hint-select { font: inherit; font-size: .95em; padding: 7px 10px; border: 2px dashed var(--line-strong); border-radius: 9px; background: var(--surface-2); color: var(--ink-2); min-width: 15em; max-width: 100%; }
